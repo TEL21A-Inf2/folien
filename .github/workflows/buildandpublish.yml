@@ -1,0 +1,17 @@
+name: buildandpublish
+on: [push]
+jobs:
+  buildpublish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install TexLive
+        run: sudo apt update -y && sudo apt install -y texlive-full latexmk
+      - name: Build PDFs
+        run: bash buildandpublish.sh
+      - name: Upload PDFs
+        uses: actions/upload-artifact@v3
+        with:
+          name: Folien-Inf2
+          path: publish/

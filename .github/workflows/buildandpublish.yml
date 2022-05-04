@@ -13,5 +13,5 @@ jobs:
       - name: Upload PDFs
         uses: actions/upload-artifact@v3
         with:
-          name: Folien Inf2
+          name: Folien-Inf2
           path: publish/

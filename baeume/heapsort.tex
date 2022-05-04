@@ -1,0 +1,41 @@
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Heaps als Sortierhilfe}
+\begin{itemize}
+	\item Erinnerung: Selectionsort
+	\begin{enumerate}
+		\item Suche und entferne kleinstes Element aus alter Liste.
+		\item Füge Element am Ende in neue Liste ein.
+	\end{enumerate}
+	\item Optimierung: Speichere alte Liste als Heap.
+	\begin{itemize}
+		\item[\positive] Schnelleres Auffinden des kleinsten Elements.
+	\end{itemize}
+	\item Resultat: Sortierverfahren wird ähnlich schnell wie Quicksort oder Heapsort.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Heapsort}
+\begin{algorithmic}
+	\State Baue Heap aus Elementen der Liste.
+	\While{Heap nicht leer}
+		\State Hänge kleinstes Element aus Heap an Liste an.
+		\State Entferne kleinstes Element aus Heap.
+	\EndWhile
+\end{algorithmic}
+\end{block}
+\end{frame}
+
+\endinput
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{}
+\end{block}
+\end{frame}

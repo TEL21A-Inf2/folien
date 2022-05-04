@@ -1,0 +1,76 @@
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Bisheriger Ansatz: Bäume als Listen}
+\begin{itemize}
+	\item[\positive] Suchbaumeigenschaft garantiert korrekte Sortierung.
+	\item[\positive] Balancierungsoperationen für schnellen Zugriff.
+	\item[\negative] Problem: Selbst AVL-Bäume können noch unnötig hoch werden.
+\end{itemize}
+\end{block}
+\begin{block}<2->
+{Alternatives Gütekriterium: Vollständigkeit}
+\begin{itemize}
+	\item Versuche, den Baum möglichst perfekt zu balancieren.
+	\item Verzichte dafür auf korrekte Sortierung.
+	\begin{itemize}
+		\item Baum sollte immer noch partiell sortiert sein.
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{definition}[vollständiger Binärbaum]
+	Ein vollständiger Binärbaum ist ein Binärbaum, bei dem alle Ebenen voll
+	besetzt sind.
+	\begin{itemize}
+		\item Ausnahme: Die unterste Ebene muss nicht vollständig sein.
+			In diesem Fall sind die Knoten von links durchgehend besetzt.
+	\end{itemize}
+\end{definition}
+\begin{block}<2->
+{Intuition}
+\begin{itemize}
+	\item Jeder Knoten (außer den Blättern) hat zwei Kinder.
+	\item Vollständige Bäume sind der Idealfall:\\
+		Perfekt balanciert und minimale Suchtiefe.
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{\insertsection}
+
+\begin{definition}[Heap]
+	Ein \alert{Heap} ist ein vollständiger Binärbaum, 
+	bei dem der Wert jedes Knotens kleiner ist als der seiner Kinder.
+\end{definition}
+\begin{block}
+{Beobachtungen}
+\begin{itemize}
+	\item Die Wurzel ist das kleinste Element.
+	\item Der Baum ist \alert{partiell sortiert}:\\
+		Beim Absteigen werden die Elemente größer.
+\end{itemize}
+\end{block}
+\begin{block}<2->
+{Alternative Definitionen:}
+\begin{itemize}
+	\item Ein Heap wie oben definiert heißt \alert{min-Heap}.
+	\item \alert{Max-Heap}: Die Wurzel ist \alert{größer} als ihre Kinder.
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\endinput
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{}
+\end{block}
+\end{frame}

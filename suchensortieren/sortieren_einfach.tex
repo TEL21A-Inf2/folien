@@ -1,0 +1,83 @@
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Insertionsort}
+\begin{itemize}
+	\item \glqq Sortieren durch Einfügen\grqq
+	\begin{itemize}
+		\item Durchlaufe die Liste einmal.
+		\item Sortiere dabei jedes Element in eine neue Liste ein.
+	\end{itemize}
+	\item Die Idee kann In-Place umgesetzt werden\\ (d.h. in der vorhandenen Liste).
+\end{itemize}
+\end{block}
+\begin{block}<2->
+{Algorithmus:}
+\begin{enumerate}
+	\item Sortiere die ersten beiden Elemente.
+	\item Ordne jedes weitere Element in den unteren Bereich ein.
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Selectionsort}
+\begin{itemize}
+	\item \glqq Sortieren durch Auswählen\grqq
+	\begin{itemize}
+		\item Durchlaufe die Liste mehrfach.
+		\item Finde das kleinste Element und hänge es an eine neue Liste an.
+	\end{itemize}
+	\item Auch dieses Verfahren kann In-Place umgesetzt werden.
+\end{itemize}
+\end{block}
+\begin{block}<2->
+{Algorithmus:}
+\begin{itemize}
+	\item Durchlaufe die Liste $n$ mal.
+	\begin{enumerate}
+		\item Finde dabei jeweils das kleinste Element.
+		\item Vertausche das Element mit dem ersten Element.
+	\end{enumerate}
+	\item Im $i$-ten Durchlauf betrachte nur die Elemente $i$ bis $n$.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Bubblesort}
+\begin{itemize}
+	\item Idee: Elemente steigen wie Blasen auf.
+	\begin{itemize}
+		\item Vergleiche jeweils zwei benachbarte Elemente.
+		\item Wenn sie falsch sortiert sind, vertausche sie.
+	\end{itemize}
+\end{itemize}
+\end{block}
+\begin{block}<2->
+{Algorithmus:}
+\begin{itemize}
+	\item Durchlaufe die Liste:.
+	\begin{enumerate}
+		\item Vergleiche Element $i$ mit $i+1$.
+		\item Vertausche die Elemente, falls sie falsch sortiert sind.
+	\end{enumerate}
+	\item Wiederhole den Vorgang, bis die Liste sortiert ist.
+	\item Im $j$-ten Durchlauf betrachte nur die Elemente \\ von $0$ bis $n-j+1$.
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\endinput
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{}
+\end{block}
+\end{frame}

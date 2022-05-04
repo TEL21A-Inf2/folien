@@ -1,0 +1,60 @@
+\ProvidesPackage{beamercmds}[2020/02/15]
+
+\let\titleoriginal\title
+\renewcommand{\title}[1]
+{
+  \titleoriginal{#1}
+  \newcommand{\thetitle}{#1}
+  \newcommand{\frameheading}{\thetitle}
+}
+
+\providecommand{\titleframe}[1]
+{
+  \begin{frame}
+    \begin{block}
+    {\centering\Large#1 }
+    \end{block}
+  \end{frame}
+}
+
+\providecommand{\maincontents}{
+  \mode<beamer>
+  {
+    \begin{frame}
+      \frametitle{Themenüberblick}
+      \tableofcontents[hideallsubsections]
+    \end{frame}
+  }
+  \mode<article>
+  {
+    \tableofcontents
+  }
+}
+
+\providecommand{\partcontentframe}{
+  \begin{frame}
+    \frametitle{Themenüberblick -- \insertpart}
+    \tableofcontents[hideallsubsections]
+  \end{frame}
+}
+
+\providecommand{\sectioncontentframe}{
+  \begin{frame}
+    \frametitle{Themenüberblick -- \insertpart}
+    \tableofcontents[
+      sectionstyle=show/shaded,
+      subsectionstyle=show/show/hide]
+  \end{frame}
+}
+
+\providecommand{\subsectioncontentframe}{
+  \begin{frame}
+    \frametitle{Themenüberblick -- \insertpart}
+    \tableofcontents[
+      sectionstyle=show/shaded,
+      subsectionstyle=show/shaded/hide,
+      subsubsectionstyle=show/show/hide]
+  \end{frame}
+}
+
+\endinput

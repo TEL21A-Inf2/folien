@@ -1,0 +1,116 @@
+\begin{frame}
+\frametitle{\insertsection}
+
+\begin{block}
+{Verwendung von Listen:}
+\begin{itemize}
+	\item Oft muss nicht auf alle Elemente einer Liste schnell zugegriffen werden.
+	\begin{itemize}
+		\item Aufgabenlisten mit Deadlines
+		\item Priorisierung von Datenverkehr oder Aufgaben
+		\item Suchalgorithmen (z.B.\ in Navigationssystemen)
+	\end{itemize}
+	\item Nur das Element mit dem geringsten oder höchsten Wert wird sofort gebraucht.
+	\item Solche Datenstrukturen können effizient mit Heaps implementiert werden.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{definition}[Priority Queue]
+Eine \alert{Priority Queue} ist ein abstrakter Listen-Datentyp, bei dem jedem Element eine Priorität zugeordnet wird.
+Operationen:\\
+\begin{itemize}
+	\item \code{insert} fügt ein neues Element ein.
+	\item \code{pop} liefert das Element mit der niedrigsten/höchsten Priorität und entfernt es aus der Liste.
+	\item Optional: \code{peek} bzw.\ \code{top} liefert das höchste Element, ohne es zu entfernen.
+\end{itemize}
+\end{definition}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Heaps als Priority Queues}
+\begin{itemize}
+	\item Höchstes bzw.\ niedrigstes Element steht in Wurzel.
+	\item Kann ohne jeden Aufwand gefunden werden.
+	\item[\positive] Sehr gut als Priority Queue geeignet. 
+\end{itemize}
+\end{block}
+\begin{block}<2->
+{Wie funktionieren \code{insert} und \code{pop}?}
+\begin{itemize}
+	\item Idee: Elemente können -- ähnlich wie bei Bubblesort -- durch Vertauschungen auf- und absteigen.
+	\item \code{insert}: 
+	\begin{enumerate}
+		\item Füge neues Element am Ende ein.
+		\item Lasse Knoten aufsteigen, bis er richtig einsortiert ist.
+	\end{enumerate}
+	\item \code{pop}:
+	\begin{enumerate}
+		\item Ersetze Wurzel durch letztes Element.
+		\item Lasse neue Wurzel absinken, bis sie richtig einsortiert ist.
+	\end{enumerate}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Aufsteigen von Knoten: Die Operation \alert{\code{Heapify-Up}}}
+\begin{algorithmic}
+	\State $k$ \gets\ Neuer Knoten
+	\While{$k < wurzel(k)$}
+		\State Vertausche $k$ mit $wurzel(k)$
+	\EndWhile
+\end{algorithmic}
+\begin{itemize}
+	\item Wird auch \code{Bubble-Up} genannt.
+\end{itemize}
+\end{block}
+
+\begin{block}<2->
+{Einsinken von Knoten: Die Operation \alert{\code{Heapify-Down}}}
+\begin{algorithmic}
+	\State $k$ \gets Wurzel
+	\While{$k > $ eines der Kinder}
+		\State Vertausche $k$ mit kleinerem Kind
+	\EndWhile
+\end{algorithmic}
+\begin{itemize}
+	\item Wird auch \code{Bubble-Down} genannt.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Zusammenfassung: Heaps als Priority Queues}
+\begin{itemize}
+	\item Niedrigstes/höchstes Element wird sofort gefunden.
+	\item \code{insert} und \code{pop} in logarithmischer Zeit möglich.
+	\item Ähnlich gute Eigenschaften wie Suchbäume.
+	\item[\positive] Heap ist immer vollständig.
+	\begin{itemize}
+		\item Einfügen und Löschen sogar etwas schneller.
+	\end{itemize}
+	\item[\negative] Kein geordneter Durchlauf durch den Baum möglich.
+	\begin{itemize}
+		\item Ungeeignet, wenn Elemente sortiert angezeigt werden sollen.
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\endinput
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{}
+\end{block}
+\end{frame}

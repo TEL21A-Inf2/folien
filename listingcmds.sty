@@ -1,0 +1,22 @@
+\ProvidesPackage{listingcmds}[2020/02/15]
+
+\RequirePackage{listings}
+
+\lstset{language=Go,
+                basicstyle=\small\ttfamily,
+                keywordstyle=\color{blue}\ttfamily,
+                stringstyle=\color{red}\ttfamily,
+                commentstyle=\color{OliveGreen}\ttfamily,
+                morecomment=[l][\color{magenta}]{\#},
+                showspaces=false,
+                showstringspaces=false,
+%                xleftmargin=.25in,
+                escapeinside=\$\$,
+                literate= {Ö}{{\"O}}1 {Ä}{{\"A}}1 {Ü}{{\"U}}1 {ß}{{\ss}}2 {ü}{{\"u}}1
+ {ä}{{\"a}}1 {ö}{{\"o}}1
+}
+
+\newcommand{\code}[1]{{\ttfamily #1}}
+
+
+\endinput

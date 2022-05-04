@@ -1,0 +1,57 @@
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Quicksort}
+\begin{itemize}
+	\item Idee: Sortiere die Liste in \alert{große Zahlen} und \alert{kleine Zahlen} vor.
+	\item Sortiere die Teillisten und hänge sie wieder zusammen.
+\end{itemize}
+\end{block}
+\begin{block}<2->
+{Algorithmus:}
+\begin{enumerate}
+	\item Wähle ein \alert{Pivotelement}.
+	\item Erzeuge zwei (möglichst gleich große) Teillisten:
+	\begin{itemize}
+		\item Elemente die \alert{kleiner} sind als das Pivotelement.
+		\item Elemente die \alert{größer} sind als das Pivotelement.
+	\end{itemize}
+	\item Sortiere rekursiv die beiden Teillisten.
+\end{enumerate}
+\end{block}
+\begin{block}<3->
+{Wie wählt man das Pivotelement?}
+\begin{itemize}
+	\item Mitte des Bereichs, mittleres Element oder erstes Element?
+	\item Hängt von Struktur der Daten ab.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Mergesort}
+\begin{itemize}
+	\item Lösung ohne das Pivot-Problem: \\ Ohne Vorsortierung direkt die Liste zerlegen.
+	\item Erst beim Zusammensetzen die Liste sortieren.
+\end{itemize}
+\end{block}
+\begin{block}
+{Algorithmus}<2->
+\begin{enumerate}
+	\item Zerlege die Liste in gleich große Teillisten.
+	\item Sortiere die Teillisten rekursiv.
+	\item \alert{Mische} die Teillisten zusammen.
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\endinput
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{}
+\end{block}
+\end{frame}

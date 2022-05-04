@@ -1,0 +1,73 @@
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Zusammenfassung: Eigenschaften von Suchbäumen}
+\begin{itemize}
+	\item Datenstruktur zum effizienten Speichern von Listen.
+	\item geordnete Speicherung von Werten:
+		\begin{itemize}
+			\item Linker Teilbaum enthält kleinere Werte als die Wurzel.
+			\item Rechter Teilbaum enthält größere Werte als die Wurzel.
+		\end{itemize}
+	\item Neue Werte werden direkt an der richtigen Stelle eingefügt.
+	\item Dadurch schnelles Suchen, Einfügen und Löschen von Werten.
+\end{itemize}
+\end{block}
+\begin{block}<2->
+{\alert{Problem:} Bäume können aus der Balance geraten.}
+	\begin{itemize}
+		\item Neue Elemente werden ggf.\ nur auf einer Seite angehängt.
+		\item Der Baum wird zu einer einfach verketteten Liste.
+		\item Man spricht von einem \alert{entarteten Baum}.
+	\end{itemize}
+\end{block}
+	
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+%% Hier auch "Kinder", "Innere Knoten", "Wurzel" etc.?
+%% - schon auf früherer Folie definiert
+\begin{definition}[Tiefe eines Knotens in einem Baum]
+	Die \alert{Tiefe} eines Knotens ist die Länge des Pfades bis zur Wurzel.
+	\begin{itemize}
+		\item Die Wurzel hat Tiefe 0.
+		\item Die Kinder der Wurzel haben Tiefe 1.
+		\item \ldots
+	\end{itemize}
+\end{definition}
+
+\begin{definition}<2->[Höhe eines Baumes]
+	Die \alert{Höhe} eines Baumes ist die maximale Länge eines Pfades von der Wurzel bis zu einem Blatt.
+	\begin{itemize}
+		\item alternativ: Die Höhe ist die maximale Tiefe eines Knotens.
+	\end{itemize}
+\end{definition}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{definition}[Balancierter Baum]
+	Ein Baum ist \alert{balanciert}, wenn für jeden Knoten gilt,
+	dass sich die Höhe des linken und rechten Teilbaumes höchstens um ein bestimmtes Verhältnis unterscheiden.
+	\begin{itemize}
+		\item<2-> Dafür muss der Baum ggf.\ nach Einfügen oder Löschen eines Elements \alert{reorganisiert} werden.
+		\item<3-> Hilfreiches Maß: \alert{Balancefaktor} $bf$ eines Knotens $k$.
+		\begin{itemize}
+			\item $bf(k)$ ist die Differenz zwischen der Höhe des rechten Teilbaumes und der Höhe des linken Teilbaumes.
+			\item $bf(k) = h(\text{rechtes Kind}) - h(\text{linkes Kind})$
+		\end{itemize}
+	\end{itemize}	
+\end{definition}
+\end{frame}
+
+\begin{frame}
+	\begin{block}
+	{Aufgabe: Entwerfen Sie Algorithmen, die \ldots}
+	\begin{enumerate}
+		\item \ldots die Tiefe eines Knotens in einem Baum bestimmen.
+		\item \ldots die Höhe eines Baumes bestimmen.
+		\item \ldots den Balancefaktor jedes Knotens ausgeben.
+	\end{enumerate}
+	\end{block}
+\end{frame}

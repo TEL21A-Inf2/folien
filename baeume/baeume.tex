@@ -1,0 +1,105 @@
+
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Wiederholung: Binäre Suche}
+\begin{itemize}
+	\item[\positive] Halbierung des Suchraums in jedem Schritt
+	\item[\negative] Liste muss sortiert sein
+	\item[\negative] Nachträgliches Sortieren ist keine Option (\alert{zu langsam})
+\end{itemize}
+\end{block}
+\begin{block}<2->
+{Idee: Elemente direkt an der richtigen Stelle einfügen.}
+\begin{itemize}
+	\item Bei Arrays zwei Möglichkeiten:
+		\begin{enumerate}
+			\item Richtige Stelle suchen und dann Elemente verschieben.
+			\item Vertauschungen wie z.B.\ bei Insertionsort.
+		\end{enumerate}
+	\item Bei verketteten Listen kann direkt eingefügt werden. 
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Gesucht: Datenstruktur für effizientes Einfügen von Elementen}
+\begin{itemize}
+	\item Kein Verschieben von Elementen
+	\item Suchraum sollte mit jedem Schritt halbiert werden.
+\end{itemize}
+\end{block}
+\begin{block}<2->
+{Idee:}
+\begin{itemize}
+	\item Pointerstruktur wie bei verketteten Listen.
+	\item Jedes Element hat zwei Nachfolger:
+		\begin{enumerate}
+			\item kleinere Elemente
+			\item größere Elemente
+		\end{enumerate}
+	\item i.W.\ immer noch eine verkettete Liste
+		\begin{itemize}
+			\item Struktur reflektiert das Verhalten der Suche.
+		\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{definition}[Graph]
+Ein \alert{Graph} ist ein Tupel $(V,E)$ mit folgenden Eigenschaften:
+\begin{itemize}
+	\item $V$ ist eine Menge von \alert{Knoten}.
+	\item $E \subseteq V \times V$ ist eine Menge von \alert{Kanten}.
+\end{itemize}
+\end{definition}
+\begin{block}<2->
+{Intuition:}
+\begin{itemize}
+	\item Knoten sind zu ordnende \alert{Objekte} (Datensätze).
+	\item Kanten sind \alert{Verweise} zwischen den Knoten (meist \alert{Pointer}).
+	\item Unterscheidung: \alert{gerichtete} und \alert{ungerichtete} Graphen
+	\begin{itemize}
+		\item Bei ungerichteten Graphen haben Kanten keine Richtung.
+		\item Zu jeder Kante gibt es eine Kante in die Rückrichtung.
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{definition}[Baum]
+Ein \alert{Baum} ist ein gerichteter Graph mit folgenden Eigenschaften:
+\begin{itemize}
+	\item Jedes Element hat höchstens einen Vorgänger.
+	\item Es gibt genau ein Element ohne Vorgänger (die \alert{Wurzel}).
+\end{itemize}
+\begin{block}<2->
+{Anders ausgedrückt:}
+\glqq Ein Baum ist ein \alert{zusammenhängender gerichteter azyklischer Graph},
+bei dem jedes Element höchstens einen Vorgänger hat.\grqq
+\end{block}
+\end{definition}
+\begin{definition}[Binärbaum]<3->
+Ein \alert{Binärbaum} ist ein Baum, bei dem jedes Element höchstens zwei Nachfolger hat.
+\end{definition}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Sprechweise}
+\begin{itemize}
+	\item Nachfolger eines Knotens heißen \alert{Kinder}.
+	\item Ein Knoten ohne Kinder ist ein \alert{Blatt}.
+	\item Kinder werden meist in \alert{linke} und \alert{rechte} Kinder unterteilt.
+	\item Ein Kind eines Knotes ist die Wurzel eines \alert{Teilbaums}.
+\end{itemize}
+\end{block}
+\end{frame}

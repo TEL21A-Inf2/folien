@@ -1,0 +1,29 @@
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Vollständige Bäume können sehr effizient gespeichert werden.}
+\begin{itemize}
+	\item Knoten durchnummerieren:
+	\begin{itemize}
+		\item Wurzel hat die Nummer $0$.
+		\item Hat ein Knoten die Nummer $n$, \\
+			  so haben seine Kinder $2n+1$ und $2n+2$.
+	\end{itemize}
+	\item<2-> Ein vollständiger Binärbaum mit $n$ Knoten kann in einem Array der Länge $n$ gespeichert werden.
+	\item<3-> Dadurch kann z.B.\ Heapsort \alert{in-place} sortieren.
+	\begin{itemize}
+		\item \alert{Achtung:} Um den Heap nicht im Array verschieben zu müssen, ist es besser, einen Max-Heap zu verwenden
+		und die Liste vom Ende her aufzubauen.
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\endinput
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{}
+\end{block}
+\end{frame}

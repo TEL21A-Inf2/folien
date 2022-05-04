@@ -1,0 +1,76 @@
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}<1->
+{Array: Zusammenhängender Bereich im Speicher}
+\end{block}
+\vspace{-1em}
+\begin{block}<2->
+{Vorteile}
+\begin{itemize}
+	\item Zugriffe i.d.R.\ sehr schnell
+	\item wahlfreier Zugriff möglich
+	\item kann leicht durchlaufen werden (Pointerberechnungen)
+\end{itemize}
+\end{block}
+\begin{block}<3->
+{Nachteile}
+\begin{itemize}
+	\item feste Größe
+	\item bei Verletzung der Grenzen können Fehler auftreten
+	\item Größenänderung unmöglich bzw.\ teuer
+	\item evtl.\ schlechte Ausnutzung des Speichers
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}<1->
+{Lösungsansatz: Dynamische Arrays}
+\end{block}
+\vspace{-1em}
+\begin{block}<2->
+{Idee: Zugriffe nicht direkt mittels \code{\lbrack\rbrack}, sondern durch Funktionen:}
+\begin{itemize}
+	\item<3-> z.B.: \code{array.get(i)} und \code{array.set(i,el)}
+	\begin{itemize}
+		\item \code{array.get(i)} liest im \code{array} an Stelle \code{i}
+		\item prüft dabei, ob \code{i} ein gültiger Index ist
+		\item \code{array.set(i,el)} schreibt Element \code{el} an Stelle \code{i}
+		\item verändert ggf.\ die Größe des Arrays
+	\end{itemize}
+	\item<4-> z.B.: \code{add}, \code{remove}
+	\begin{itemize}
+		\item \code{add} fügt ein Element am Ende der Liste hinzu.
+		\item \code{remove} löscht das letzte Element der Liste.
+		\item \alert{Standardoperationen auf Listen}
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Implementierung dynamischer Arrays}
+\end{block}
+\vspace{-1em}
+\begin{block}
+{Record-Datentyp (Klasse oder Struct), der ein Array enthält}
+\begin{itemize}
+	\item Felder:
+	\begin{itemize}
+		\item Pointer/Referenz auf das Array
+		\item Größe des reservierten Speichers
+		\item Tatsächliche Anzahl der Elemente
+	\end{itemize}
+	\item<2-> Member-Funktionen für Zugriff:
+	\begin{itemize}
+		\item \code{add}
+		\item \code{remove}
+		\item \code{get}
+		\item \code{reallocate} (intern von \code{add} benutzt)
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}

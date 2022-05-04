@@ -1,0 +1,125 @@
+\begin{frame}
+\frametitle{\insertsection}
+\begin{definition}[AVL-Baum]
+	Ein \alert{AVL-Baum} ist ein binärer Suchbaum, bei dem der Balancefaktor jedes Knotens im Bereich
+	$\{-1,0,1\}$ liegt.
+\end{definition}
+
+\begin{block}<2->
+{Erhaltung der AVL-Eigenschaft}
+\begin{itemize}
+	\item Beim Einfügen oder Löschen kann die Eigenschaft verloren gehen.
+	\item Der Baum (oder ein Teilbaum) muss \alert{rotiert} werden.
+	\item Intuitiv: \alert{nach rechts Rotieren} bedeutet, die Wurzel in den rechten Teilbaum zu verschieben
+			und eine neue Wurzel aus dem linken Teilbaum zu holen.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Rotationsarten (\alert{Einfachrotationen})}
+\begin{itemize}
+	\item Links-Rotation:
+	\begin{itemize}
+		\item Wurzel wird in den linken Teilbaum abgesenkt.
+		\item Rechtes Kind wird die neue Wurzel.
+		\item Linkes Kind der neuen Wurzel wird zum rechten Kind der alten.
+	\end{itemize}
+	\item<2-> Rechts-Rotation:
+	\begin{itemize}
+		\item Wurzel wird in den rechten Teilbaum abgesenkt.
+		\item Linkes Kind wird die neue Wurzel.
+		\item Rechtes Kind der neuen Wurzel wird zum linken Kind der alten.
+	\end{itemize}
+\end{itemize}
+\onslide<3->{Diese beiden Rotationen stellen die Balance wieder her, wenn das Ungleichgewicht \alert{ganz außen} im Baum ist.}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Ungleichgewichtssituationen}
+Wir unterscheiden, auf welcher Seite des Baumes das Ungleichgewicht besteht:
+\end{block}
+
+\begin{block}
+{Links-Links}
+\begin{itemize}
+	\item Balancefaktoren der Wurzel und des linken Kindes negativ.
+	\item Balance wird durch Rechtsrotation wieder hergerstellt.
+\end{itemize}
+\end{block}
+\begin{block}<2->
+{Rechts-Rechts}
+\begin{itemize}
+	\item Balancefaktoren der Wurzel und des rechten Kindes positiv.
+	\item Balance wird durch Linkssrotation wieder hergerstellt.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Ungleichgewichtssituationen}
+Entsprechend gibt es noch die Situationen \emph{Links-Rechts} und \emph{Rechts-Links}:
+\end{block}
+
+\begin{block}
+{Links-Rechts}
+\begin{itemize}
+	\item Balancefaktor der Wurzel negativ.
+	\item Balancefaktor des linken Kindes positiv.
+	\item Balance wird durch \alert{Links-Rechts-Rotation} wieder hergerstellt:
+	\begin{enumerate}
+		\item Linksrotation durch das linke Kind.
+		\item Rechtsrotation durch die Wurzel.
+	\end{enumerate}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Ungleichgewichtssituationen}
+Entsprechend gibt es noch die Situationen \emph{Links-Rechts} und \emph{Rechts-Links}:
+\end{block}
+
+\begin{block}
+{Rechts-Links}
+\begin{itemize}
+	\item Balancefaktor der Wurzel positiv.
+	\item Balancefaktor des rechten Kindes negativ.
+	\item Balance wird durch \alert{Rechts-Links-Rotation} wieder hergerstellt:
+	\begin{enumerate}
+		\item Rechtsrotation durch das rechte Kind.
+		\item Linksrotation durch die Wurzel.
+	\end{enumerate}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Implementierung von AVL-Bäumen}
+\begin{itemize}
+	\item Einfügen und Löschen wie bisher.
+	\item Dabei zusätzlich Balancefaktoren berechnen.
+	\item<3-> Sobald ein Knoten mit Balancefaktor $-2$ gefunden wird, linkes Kind prüfen:
+	\begin{itemize}
+		\item Kind hat Balancefaktor $-1$: Rechtsrotation
+		\item Kind hat Balancefaktor $+1$: Links-Rechts-Rotation
+	\end{itemize}
+	\item<4-> Sobald ein Knoten mit Balancefaktor $+2$ gefunden wird, rechtes Kind prüfen:
+	\begin{itemize}
+		\item Kind hat Balancefaktor $+1$: Linksrotation
+		\item Kind hat Balancefaktor $-1$: Rechts-Links-Rotation
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}

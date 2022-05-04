@@ -1,0 +1,48 @@
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Shellsort}
+\begin{itemize}
+	\item Problem bei Insertionsort: Elemente müssen zum Einsortieren oft über weite Strecken verschoben werden.
+	\item Andererseits: Insertionsort arbeitet sehr effizient, wenn die Liste schon fast sortiert ist.
+\end{itemize}
+\end{block}
+\begin{block}<2->
+{Idee: Vorab eine grobe Ordnung herstellen.}
+\begin{itemize}
+	\item Betrachte zunächst nur jedes $i$-te Element.
+	\item Verringere $i$ in jedem Schritt bis $i=1$.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Bucketsort}
+\begin{itemize}
+	\item Vor- oder Teilsortierung mittels Kategorien
+	\item Oft ist der Datenbereich strukturiert, Elemente können kategorisiert werden.
+	\item Vollständige Sortierung evtl.\ nicht notwendig.
+\end{itemize}
+\end{block}
+\begin{block}<2->
+{Algorithmus:}
+\begin{enumerate}
+	\item Sortiere Daten nach Kategorien in sog.\ \alert{Buckets}
+	\begin{itemize}
+		\item Kategorien können Jahreszahlen, Anfangsbuchstaben, Zahlenbereiche etc.\ sein.
+	\end{itemize}
+	\item Sortiere jeden Bucket einzeln mit einem klassischen Verfahren.
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\endinput
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{}
+\end{block}
+\end{frame}

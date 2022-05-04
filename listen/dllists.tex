@@ -1,0 +1,58 @@
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Doppelte Verkettung: Pointer auf Nachfolger und Vorgänger}
+\begin{itemize}
+	\item<2-> Idee: Elemente der Liste bestehen aus drei Teilen
+	\begin{itemize}
+		\item Daten
+		\item Pointer auf das nächste Element
+		\item Pointer auf das vorhergehende Element
+	\end{itemize}
+\end{itemize}
+\end{block}
+\begin{block}<3->
+{Vor- und Nachteile:}
+\begin{itemize}
+	\item effizienter bei wiederholten Zugriffen auf benachbarte Elemente
+	\item etwas mehr Speicherverbrauch als einfach verkettete Liste
+	\begin{itemize}
+		\item kann i.d.R.\ vernachlässigt werden
+	\end{itemize}
+\end{itemize}
+\end{block}
+\begin{block}<4->
+{Verwaltung durch Dummy-Element}
+\begin{itemize}
+	\item Nutze ein spezielles leeres Element (\code{HEAD})
+	\item markiert Anfang und Ende der Liste
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Implementierung doppelt verketteter Listen}
+\end{block}
+\vspace{-1em}
+\begin{block}
+{Elemente: \code{struct} mit Daten und Pointer auf Nachbarn}
+\end{block}
+\vspace{-1em}
+\begin{block}
+{Liste: \code{struct} mit Pointer auf den Kopf der Liste}
+\begin{itemize}
+	\item Felder:
+	\begin{itemize}
+		\item Pointer auf das \code{HEAD}-Element
+	\end{itemize}
+	\item<2-> Basisfunktionen für Zugriff:
+	\begin{itemize}
+		\item \code{add}
+		\item \code{remove}
+		\item \code{get}
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}

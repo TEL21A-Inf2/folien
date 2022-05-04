@@ -1,0 +1,62 @@
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Arrays, Listen, Bäume etc.\ sind \alert{abstrakte Datentypen}}
+\begin{itemize}
+    \item Verhalten wird nur durch Funktionen spezifiziert.
+    \item Listen-Datentypen haben Funktionen wie \code{push}, \code{pop} etc.
+    \item Die Implementierung / das Verhalten dieser Funktionen bestimmt,
+        um was für einen Datentyp es sich genau handelt.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Implementierung abstrakter Datentypen}
+\begin{itemize}
+    \item Grundlegende Datenstruktur ist immer ein \code{struct},
+        das die konkrete Implementierung enthält.
+        \begin{itemize}
+            \item z.B.\ Pointer auf Listenelemente, ein Array etc.
+            \item Alternativ auch andere Datentypen-\code{struct}s
+                (z.B.\ bei Stacks und Queues)
+            \item zusätzlich ggf.\ Hilfsdaten wie z.B.\ die Länge der Liste. 
+        \end{itemize}
+    \item Zugriff auf den Datentyp mittels Funktionen.
+    \item Elemente der Liste etc.\ auch als \code{struct},
+        in dem auch Daten verwaltet werden.
+        Zugriff auch hier durch Funktionen.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Vorteile dieses Ansatzes:}
+\begin{itemize}
+    \item Die Funktionen \alert{verstecken} die eigentliche Implementierung.
+    \begin{itemize}
+        \item Technische Details wie Pointer und Hilfsvariablen
+            spielen für den Benutzer keine Rolle.
+    \end{itemize}
+    \item Der Elementtyp bzw.\ die Daten sind leicht austauschbar.
+    \begin{itemize}
+        \item Will man die zugrundeliegenden Daten ändern,
+            muss man nur das Struct und die Funktionen für den Elementtyp ändern.
+    \end{itemize}
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+\endinput
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{}
+\end{block}
+\end{frame}

@@ -1,0 +1,129 @@
+\begin{frame}
+\frametitle{\insertsection}
+\begin{definition}[Binärer Suchbaum]
+Ein \alert{binärer Suchbaum} ist ein Binärbaum, für den gilt:
+\begin{itemize}
+	\item Jedem Knoten ist ein \alert{Schlüssel} zugeordnet.
+	\begin{itemize}
+		\item Auf den Schlüsseln ist eine \alert{totale Ordnung} definiert.
+		\item D.h.\ man kann sie vergleichen.
+	\end{itemize}
+	\item Für jeden Knoten gilt die \alert{In-Order-Eigenschaft}:
+	\begin{itemize}
+		\item Die Elemente des linken Teilbaums sind kleiner.
+		\item Die Elemente des rechten Teilbaums sind größer.
+	\end{itemize}
+\end{itemize}
+\end{definition}
+\begin{block}<2->
+{Motivation}
+\begin{itemize}
+	\item Oft als \alert{Wörterbücher} verwendet.
+	\begin{itemize}
+		\item Suche nach einem \alert{Schlüssel} liefert dazugehörigen \alert{Wert}.
+	\end{itemize}
+	\item Stichwörter in Programmiersprachen:
+	\begin{itemize}
+		\item Map, assoziatives Array, Dictionary, Key-Value-Paare
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Suchen von Elementen}
+Ansatz: Wie bei der binären Suche.
+\begin{itemize}
+	\item Steige bei der Suche in den Baum hinab.
+	\item Gehe jeweils nach links oder rechts, wenn der gesuchte Wert kleiner oder größer
+		als der aktuelle Knoten ist.
+	\item Ergebnis ist der Wert zum gesuchten Schlüssel.
+\end{itemize}
+\end{block}
+\begin{block}<2->
+{Algorithmus:}
+\begin{enumerate}
+	\item Starte bei Wurzel.
+	\item Falls aktueller Knoten leer: \alert{\textbf{NICHT GEFUNDEN}}.
+	\item Vergleiche gesuchten Wert mit Wert des aktuellen Knotens:
+	\begin{itemize}
+		\item Falls gleich: \alert{\textbf{GEFUNDEN}}.
+		\item Falls kleiner: Fahre bei linkem Teilbaum fort.
+		\item Falls größer: Fahre bei rechtem Teilbaum fort.
+	\end{itemize}
+\end{enumerate}
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Anzeige der Elemente im Baum}
+\begin{itemize}
+	\item Ein Baum ist der Vorstellung nach immer noch eine Liste.
+	\item In welcher Reihenfolge werden die Elemente angezeigt?
+	\item<2-> Anzeige in natürlicher Sortierung: \alert{In-Order-Durchlauf}.
+	\begin{itemize}
+		\item Rekursiver Abstieg in den Baum.
+		\item Die Wurzel wird \alert{zwischen} den Knoten des linken und des rechten Teilbaumes angezeigt.
+	\end{itemize}
+	\item<3-> Alternativen: \alert{Pre-} oder \alert{Post-Order-Durchlauf}.
+	\begin{itemize}
+		\item Die Wurzel wird \alert{vor} bzw.\ \alert{nach} den Knoten des linken und des rechten Teilbaumes angezeigt.
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Einfügen von Elementen}
+Ansatz: Fast wie bei der Suche.
+\begin{itemize}
+	\item Steige in den Baum ab, bis der Knoten als linkes oder rechtes Kind angehängt werden kann.
+\end{itemize}
+\end{block}
+
+\begin{block}<2->
+{Algorithmus:}
+\begin{enumerate}
+	\item Starte bei Wurzel.
+	\item Falls \alert{aktueller Knoten leer}, füge neuen Datensatz hier ein.
+	\item Vergleiche neuen Wert mit Wert des aktuellen Knotens:
+	\begin{itemize}
+		\item Falls kleiner: Fahre bei linkem Teilbaum fort.
+		\item Falls größer: Fahre bei rechtem Teilbaum fort.
+	\end{itemize}
+\end{enumerate}
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Löschen eines Elements}
+Ansatz: Suche den zu löschenden Wert und \glqq überbrücke\grqq\ Pointer darauf ähnlich wie bei einer verketteten Liste.
+\begin{itemize}
+	\item Problem: Der gelöschte Knoten könnte \alert{zwei} Kinder haben.
+	\item<2-> Einfache Lösung: Lösche den gesamten Teilbaum und füge die Kinder nacheinander wieder ein.
+	\item<3-> Besser: Suche \alert{In-Order-Nachfolger} des gelöschten Knotens und setze diesen stattdessen ein.
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\endinput
+
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{}
+\end{block}
+\end{frame}

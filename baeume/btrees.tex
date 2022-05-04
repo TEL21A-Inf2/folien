@@ -1,0 +1,29 @@
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Optimierung des Suchbaumprinzips: B-Bäume}
+Bei einem \alert{B-Baum} kann ein Knoten mehr als zwei Kinder haben und mehr als einen Schlüssel tragen.
+\begin{itemize}
+	\item Trägt der Knoten $n$ Schlüssel, so hat er $n+1$ Kinder.
+	\item Kind $0$ enthält Werte, die kleiner sind als der erste Schlüssel.
+	\item Kind $1$ enthält Werte, die zwischen erstem und zweitem Schlüssel liegen usw.
+\end{itemize}
+\end{block}
+\begin{block}<2->
+{Eigenschaften}
+\begin{itemize}
+%	\item Die Schlüssel innerhalb der Knoten müssen sortiert sein.
+	\item Die Anzahl der Schlüssel pro Knoten ist variabel
+		\begin{itemize}
+			\item Meist zwischen $n$ und $2n$ für vorgegebene Zahl $n$.
+		\end{itemize}
+	\item Alle Blätter haben die gleiche Tiefe.
+	\begin{itemize}
+		\item ggf. Zusatzschlüssel in inneren Knoten benutzen.
+	\end{itemize}
+\end{itemize}
+\end{block}
+\begin{block}<3->
+{B-Bäume sind eine typische Datenstruktur in Datenbanken und Dateisystemen.}
+\end{block}
+\end{frame}

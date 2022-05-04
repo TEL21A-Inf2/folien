@@ -1,0 +1,23 @@
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}
+{Weitere Idee: Abschwächung des AVL-Prinzips}
+\begin{itemize}
+	\item Keine perfekte, sondern näherungsweise Balancierung.
+	\item<2-> Idee: Knoten in rot oder schwarz einfärben.
+	\begin{itemize}
+		\item Baum ist balanciert, wenn man nur schwarze Knoten betrachtet.
+		\item Anzahl der roten Knoten ist begrenzt.
+	\end{itemize}
+	\item<3-> Vorteil: Es muss nicht jedes Mal neu balanciert werden.
+\end{itemize}
+\end{block}
+\begin{definition}<4->[Rot-Schwarz-Bäume]
+Ein \alert{Rot-Schwarz-Baum} ist ein Binärbaum, bei dem jeder Knoten eine Farbe (Rot oder Schwarz) hat.
+\begin{itemize}
+	\item Jedes Blatt ist schwarz.
+	\item Ein roter Knoten hat nur schwarze Kinder.
+	\item Jeder Pfad von einem Knoten zu seinen Blättern hat die gleiche Anzahl schwarzer Knoten.
+\end{itemize}
+\end{definition}
+\end{frame}
